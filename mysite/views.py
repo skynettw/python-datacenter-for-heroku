@@ -1,8 +1,9 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib import auth
 import random
-from mysite.models import Post
+from mysite.models import Post, Country, City
 
 def index(request):
 	posts = Post.objects.all()
@@ -19,5 +20,13 @@ def show(request, id):
 	except:
 		return redirect("/")
 	return render(request, "showpost.html", locals())
+
+def logout(request):
+	auth.logout(request)
+	return redirect("/")
+
+def rank(request):
+	cities = City.objects.all()
+	return render(request, "rank.html", locals())
 
 
