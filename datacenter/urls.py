@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite.views import index, show, logout, rank
+from mysite.views import index, show, logout, rank, teampages, stupages, chart
 
 urlpatterns = [
 	path('show/<int:id>/', show),
     path('admin/', admin.site.urls),
     path('rank/', rank),
+    path('chart/', chart),
+    path('team-pages/', teampages),
+    path('stu-pages/', stupages),
     path('logout/', logout),
     path('', index),
 ]

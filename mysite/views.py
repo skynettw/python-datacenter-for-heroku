@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import auth
 import random
-from mysite.models import Post, Country, City
+from mysite.models import Post, Country, City, TeamSite, StuSite
 
 def index(request):
 	posts = Post.objects.all()
@@ -28,5 +28,16 @@ def logout(request):
 def rank(request):
 	cities = City.objects.all()
 	return render(request, "rank.html", locals())
+
+def chart(request):
+	cities = City.objects.all()
+	return render(request, "chart.html", locals())
+
+def teampages(request):
+	return render(request, 'team-pages.html', locals())
+
+def stupages(request):
+	sites = StuSite.objects.all()
+	return render(request, 'stu-pages.html', locals())
 
 

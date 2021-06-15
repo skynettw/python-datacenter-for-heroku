@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}學生成果網站{% endblock %}
+{% block headmessage %} <h1>學生成果網站</h1> {% endblock %}
+{% block content %}
+<table class='table table-striped table-bordered'>
+	<tr>
+		<td>姓名</td>
+		<td>網址</td>
+	</tr>
+	{% for site in sites %}
+		<tr>
+			<td>{{ site.name }}</td>
+			<td><a href='{{ site.url }}'>{{ site.url }}</a></td>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}
