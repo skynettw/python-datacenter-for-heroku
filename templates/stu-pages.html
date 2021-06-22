@@ -4,11 +4,13 @@
 {% block content %}
 <table class='table table-striped table-bordered'>
 	<tr>
+		<td>編號</td>
 		<td>姓名</td>
 		<td>網址</td>
 	</tr>
 	{% for site in sites %}
 		<tr>
+			<td>{{ forloop.counter }}</td>
 			<td>{{ site.name }}</td>
 			<td><a href='{{ site.url }}'>{{ site.url }}</a></td>
 		</tr>
