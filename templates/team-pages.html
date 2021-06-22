@@ -4,16 +4,14 @@
 {% block content %}
 <table class='table table-striped table-bordered'>
 	<tr>
-		<td>標題</td>
-		<td>{{target.title}}</td>
+		<td>組別</td>
+		<td>網址</td>
 	</tr>
+	{% for t in target %}
 	<tr>
-		<td>張貼日期</td>
-		<td>{{target.pub_date}}</td>
+		<td>{{t.title}}</td>
+		<td><a href="{{t.url}}">{{t.url}}</a></td>
 	</tr>
-	<tr>
-		<td>內容</td>
-		<td>{{target.body}}</td>
-	</tr>
+	{% endfor %}
 </table>
 {% endblock %}

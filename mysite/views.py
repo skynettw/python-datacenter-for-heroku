@@ -34,6 +34,7 @@ def chart(request):
 	return render(request, "chart.html", locals())
 
 def teampages(request):
+	target = TeamSite.objects.all()
 	return render(request, 'team-pages.html', locals())
 
 def stupages(request):
